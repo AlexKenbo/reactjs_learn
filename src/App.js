@@ -63,20 +63,9 @@ class App extends Component {
   }
 
   render() {
-    // const style = {
-    //   backgroundColor: 'green',
-    //   color: 'white',
-    //   font: 'inherit',
-    //   border: '1px solid blue',
-    //   padding: '8px',
-    //   cursor: 'pointer',
-    //   ':hover': {
-    //     backgroundColor: 'lightgreen',
-    //     color: 'black'
-    //   }
-    // };
-
     let persons = null;
+    let btnClass = '';
+
 
     if (this.state.showPersons) {
       persons = (
@@ -91,11 +80,7 @@ class App extends Component {
           })}
         </div>
       );
-      // style.backgroundColor = 'red';
-      // style[':hover'] = {
-      //   backgroundColor: 'salmon',
-      //   color: 'black'
-      // };
+      btnClass = classes.Red;
     }
 
     const asignedClasses = [];
@@ -112,13 +97,11 @@ class App extends Component {
         <div className={classes.App}>
           <h1>Hello, i am React App!</h1>
           <p className={asignedClasses.join(' ')}>This is really working</p>
-          {/* <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>Toggle Persons</StyledButton> */}
-          <button className={classes.Button} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+          <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
           {persons}
         </div>
-      //</StyleRoot>
     );
-    //return React.createElement('div', {className: 'App' }, React.createElement('h1', null, "Hello, i'm React App!"));
+
   }
 }
 
@@ -126,28 +109,3 @@ class App extends Component {
 export default App;
 
 
-// const App = props => {
-//   const [ personState, setPersonsState ] = useState({
-//     persons: [
-//       { name: "Max", age: 28 },
-//       { name: "Manu", age: 29 },
-//       { name: "Stephanie", age: 26 },
-//     ],
-
-//   });
-
-//   const [ otherState, setOtherState ] = useState({otherState: "some value"});
-
-//   console.log(personState, otherState);
-
-//   const switchNameHandler = () => {
-//     setPersonsState({
-//       persons: [
-//         { name: "Maximilian", age: 28 },
-//         { name: "Manu", age: 29 },
-//         { name: "Stephanie", age: 27 },
-//       ],
-//       otherState: personState.otherState
-//     })
-//   }
-// }
