@@ -2,9 +2,25 @@ import React, { useEffect } from 'react';
 import classes from './Cockpit.css'
 
 const Cockpit = (props) => {
+    //run one time
     useEffect(() => {
         console.log('[Cockpit.js] useEffect');
-    });
+
+        // HTTP request
+        setTimeout(() => {
+            alert('Saved data cloud!');
+        }, 1000);
+    }, []);
+
+    // run if [persons] changed
+    // useEffect(() => {
+    //     console.log('[Cockpit.js] useEffect');
+
+    //     // HTTP request
+    //     setTimeout(() => {
+    //         alert('Saved data cloud!');
+    //     }, 1000);
+    // }, [props.persons]);
 
     const asignedClasses = [];
     let btnClass = '';
