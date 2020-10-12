@@ -17,6 +17,10 @@ class Persons extends Component {
         return {message: 'Snapshot!'};
     }
 
+    componentWillUnmount() {
+        console.log('[Persons.js] componentWillUnmount')
+    }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log('[Persons.js] componentDidUpdate');
         console.log(snapshot);

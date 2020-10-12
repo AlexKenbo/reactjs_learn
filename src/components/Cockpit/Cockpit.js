@@ -10,7 +10,15 @@ const Cockpit = (props) => {
         setTimeout(() => {
             alert('Saved data cloud!');
         }, 1000);
+
+        return () => console.log('[Cockpit.js] cleanup work in useEffect') 
     }, []);
+
+    //run cleanup evry time
+    useEffect(() => {
+        console.log('[Cockpit.js] 2nd useEffect')
+        return () => console.log('[Cockpit.js] cleanup work in 2 nd useEffect') 
+    });
 
     // run if [persons] changed
     // useEffect(() => {
