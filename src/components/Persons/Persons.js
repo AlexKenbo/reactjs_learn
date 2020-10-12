@@ -9,7 +9,12 @@ class Persons extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         console.log('[Persons.js] shouldComponentUpdate');
-        return true;
+        //Это сравнение указателей, а не значений ключей. Поэтому важно в App перезаписывать новый данные, а не менять по ссылке - так как указатель будут равные. 
+        if (nextProps.persons !== this.props.persons) {
+            return true;
+          } else {
+            return false
+          }
     }
 
     getSnapshotBeforeUpdate(prevProps, prevState) {

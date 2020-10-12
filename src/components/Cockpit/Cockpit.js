@@ -7,12 +7,11 @@ const Cockpit = (props) => {
         console.log('[Cockpit.js] useEffect');
 
         // HTTP request
-        const timer = setTimeout(() => {
+        setTimeout(() => {
             alert('Saved data cloud!');
         }, 3000);
 
         return () => {
-            clearTimeout(timer); //удалить таймер если нажата кнопка Toggle cockpit до срабатывания
             return console.log('[Cockpit.js] cleanup work in useEffect');
         } 
     }, []);
