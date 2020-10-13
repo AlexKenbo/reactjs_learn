@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Person from './Person/Person'
 
-class Persons extends Component {
+// PureComponet выполняет shouldComponentUpdate с проверкой всех props
+class Persons extends PureComponent {
     // static getDerivedStateFromProps(state, props) {
     //     console.log('[Persons.js] getDerivedStateFromProps', props);
     //     return state;
     // }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log('[Persons.js] shouldComponentUpdate');
-        //Это сравнение указателей, а не значений ключей. Поэтому важно в App перезаписывать новый данные, а не менять по ссылке - так как указатель будут равные. 
-        if (nextProps.persons !== this.props.persons) {
-            return true;
-          } else {
-            return false
-          }
-    }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log('[Persons.js] shouldComponentUpdate');
+    //     //Это сравнение указателей, а не значений ключей. Поэтому важно в App перезаписывать новый данные, а не менять по ссылке - так как указатель будут равные. 
+    //     if (nextProps.persons !== this.props.persons ||
+    //         nextProps.changed !== this.props.changed ||
+    //         nextProps.clicked !== this.props.clicked) {
+    //         return true;
+    //       } else {
+    //         return false
+    //       }
+    // }
 
     getSnapshotBeforeUpdate(prevProps, prevState) {
         console.log('[Persons.js] getSnapshotBeforeUpdate');
